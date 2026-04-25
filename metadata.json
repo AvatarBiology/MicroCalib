@@ -1,0 +1,6 @@
+{
+  "name": "顯微測微器校正練習系統",
+  "description": "An interactive tool for microscopy students to practice calculating the calibration of an ocular micrometer using a stage micrometer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
