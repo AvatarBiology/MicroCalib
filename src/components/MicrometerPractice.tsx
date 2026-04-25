@@ -123,13 +123,28 @@ export default function MicrometerPractice() {
     if (!certificateRef.current) return;
     setIsPdfGenerating(true);
     try {
-      // Add useCORS and allowTaint to support rendering lucide icons and complex styles
-      const canvas = await html2canvas(certificateRef.current, { 
-        scale: 2, 
-        useCORS: true,
-        allowTaint: true,
-        backgroundColor: '#faf9f6'
-      });
+      // Fix for modal scrolling causing html2canvas clipping
+      const modal = document.getElementById('pdf-modal-container');
+      const originalScrollTop = modal ? modal.scrollTop : 0;
+      if (modal) modal.scrollTop = 0;
+
+      let canvas;
+      try {
+        canvas = await html2canvas(certificateRef.current, { 
+          scale: 2, 
+          useCORS: true,
+          allowTaint: true,
+          backgroundColor: '#faf9f6',
+          width: 800,
+          height: 566,
+          windowWidth: 800,
+          windowHeight: 566
+        });
+      } finally {
+        // Restore scroll position
+        if (modal) modal.scrollTop = originalScrollTop;
+      }
+      
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF('l', 'mm', 'a4');
       const pdfWidth = pdf.internal.pageSize.getWidth();
@@ -566,6 +581,7 @@ export default function MicrometerPractice() {
       <AnimatePresence>
         {showCertificate && (
           <motion.div 
+            id="pdf-modal-container"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-slate-900/80 backdrop-blur-md p-4 overflow-y-auto"
           >
@@ -621,14 +637,14 @@ export default function MicrometerPractice() {
                   </div>
 
                   <div className="w-full flex justify-between px-24 mt-4 items-center">
-                    <div className="text-center font-sans mt-8">
+                    <div className="text-center font-sans mt-3">
                       <div className="w-32 border-b mb-2" style={{ borderColor: '#94a3b8' }}></div>
                       <p className="text-[11px] uppercase tracking-widest" style={{ color: '#64748b' }}>Date</p>
                       <p className="font-bold mt-1 text-[15px]" style={{ color: '#334155' }}>{new Date().toLocaleDateString('zh-TW')}</p>
                     </div>
                     
-                    <div className="relative flex items-center justify-center w-32 h-32">
-                       <div className="w-[110px] h-[110px] rounded-full border-4 flex items-center justify-center rotate-12" style={{ backgroundColor: '#fde68a', borderColor: '#fbbf24' }}>
+                    <div className="relative flex items-center justify-center w-32 h-32 -mt-4">
+                       <div className="w-[110px] h-[110px] rounded-full border-4 flex items-center justify-center rotate-12 -translate-y-2" style={{ backgroundColor: '#fde68a', borderColor: '#fbbf24' }}>
                          <div className="w-20 h-20 border-2 border-dashed rounded-full flex flex-col items-center justify-center" style={{ borderColor: '#f59e0b', backgroundColor: 'rgba(255,255,255,0.6)' }}>
                             <Star className="w-7 h-7 mb-1" style={{ color: '#f59e0b', fill: '#f59e0b' }}/>
                             <span className="text-[10px] font-black uppercase tracking-tighter" style={{ color: '#b45309' }}>Certified</span>
@@ -636,7 +652,7 @@ export default function MicrometerPractice() {
                        </div>
                     </div>
 
-                    <div className="text-center font-sans mt-8">
+                    <div className="text-center font-sans mt-3">
                        <div className="text-2xl font-black italic mb-1 font-serif tracking-widest" style={{ color: '#1e293b' }}>Avatar Biology</div>
                        <p className="text-xs font-bold tracking-widest" style={{ color: '#64748b' }}>VIRTUAL LAB SYSTEM</p>
                     </div>
