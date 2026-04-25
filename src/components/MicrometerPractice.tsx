@@ -619,19 +619,19 @@ export default function MicrometerPractice() {
                 </div>
 
                 <div className="relative z-10 flex flex-col h-full justify-between items-center text-center pt-4 pb-2">
-                  <div className="space-y-2 w-full">
+                  <div className="space-y-1 w-full">
                     <div className="flex justify-center mb-1"><Award className="w-14 h-14" style={{ color: '#f59e0b' }} /></div>
                     <h1 className="text-4xl font-black tracking-[0.2em] ml-3" style={{ color: '#1e293b' }}>顯微測微器校正達人</h1>
                     <p className="text-xl font-bold tracking-[0.3em] uppercase" style={{ color: '#d97706' }}>Certificate of Excellence</p>
                   </div>
 
                   <div className="w-full px-20">
-                    <p className="text-[17px] mb-4 font-sans" style={{ color: '#475569' }}>茲證明</p>
-                    <div className="border-b-2 pb-2 mb-6 flex justify-center items-end gap-10" style={{ borderColor: '#94a3b8' }}>
+                    <p className="text-[17px] mb-2 font-sans" style={{ color: '#475569' }}>茲證明</p>
+                    <div className="border-b-2 pb-2 mb-4 flex justify-center items-end gap-10" style={{ borderColor: '#94a3b8' }}>
                       <span className="text-2xl font-bold tracking-widest w-1/2 text-right" style={{ color: '#334155' }}>座號：{studentId}</span>
                       <span className="text-4xl font-black w-1/2 text-left" style={{ color: '#1e293b' }}>{studentName} </span>
                     </div>
-                    <p className="text-[17px] leading-[1.8] font-sans px-10 text-justify" style={{ color: '#334155' }}>
+                    <p className="text-[16px] leading-[1.6] font-sans px-10 text-justify" style={{ color: '#334155' }}>
                       恭喜同學！您在「顯微測微器校正練習系統」中，展現出卓越的顯微鏡操作技巧與精確的數值計算能力，連續正確完成五次測微器刻度數值校正，特發此證，以茲鼓勵。
                     </p>
                   </div>
@@ -643,7 +643,7 @@ export default function MicrometerPractice() {
                       <p className="font-bold mt-1 text-[15px]" style={{ color: '#334155' }}>{new Date().toLocaleDateString('zh-TW')}</p>
                     </div>
                     
-                    <div className="relative flex items-center justify-center w-28 h-28 -mt-2">
+                    <div className="relative flex items-center justify-center w-28 h-28">
                        <div className="w-[100px] h-[100px] rounded-full border-4 flex items-center justify-center rotate-12 -translate-y-1" style={{ backgroundColor: '#fde68a', borderColor: '#fbbf24' }}>
                          <div className="w-16 h-16 border-2 border-dashed rounded-full flex flex-col items-center justify-center" style={{ borderColor: '#f59e0b', backgroundColor: 'rgba(255,255,255,0.6)' }}>
                             <Star className="w-6 h-6 mb-0.5" style={{ color: '#f59e0b', fill: '#f59e0b' }}/>
