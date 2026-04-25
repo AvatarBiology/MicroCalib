@@ -605,7 +605,7 @@ export default function MicrometerPractice() {
             <div className="w-full max-w-4xl overflow-x-auto pb-8 relative flex justify-center drop-shadow-2xl">
               <div 
                 ref={certificateRef}
-                className="p-12 shrink-0 relative overflow-hidden"
+                className="p-10 shrink-0 relative overflow-hidden"
                 style={{ width: '800px', height: '566px', fontFamily: 'serif', backgroundColor: '#faf9f6', color: '#1e293b' }}
               >
                 {/* Certificate Background and Borders */}
@@ -618,41 +618,41 @@ export default function MicrometerPractice() {
                   <Award className="w-[400px] h-[400px]" style={{ color: '#78350f' }} />
                 </div>
 
-                <div className="relative z-10 flex flex-col h-full justify-between items-center text-center pt-8 pb-4">
-                  <div className="space-y-4 w-full">
-                    <div className="flex justify-center mb-2"><Award className="w-16 h-16" style={{ color: '#f59e0b' }} /></div>
+                <div className="relative z-10 flex flex-col h-full justify-between items-center text-center pt-4 pb-2">
+                  <div className="space-y-2 w-full">
+                    <div className="flex justify-center mb-1"><Award className="w-14 h-14" style={{ color: '#f59e0b' }} /></div>
                     <h1 className="text-4xl font-black tracking-[0.2em] ml-3" style={{ color: '#1e293b' }}>顯微測微器校正達人</h1>
                     <p className="text-xl font-bold tracking-[0.3em] uppercase" style={{ color: '#d97706' }}>Certificate of Excellence</p>
                   </div>
 
                   <div className="w-full px-20">
-                    <p className="text-[17px] mb-8 font-sans" style={{ color: '#475569' }}>茲證明</p>
-                    <div className="border-b-2 pb-3 mb-8 flex justify-center items-end gap-10" style={{ borderColor: '#94a3b8' }}>
+                    <p className="text-[17px] mb-4 font-sans" style={{ color: '#475569' }}>茲證明</p>
+                    <div className="border-b-2 pb-2 mb-6 flex justify-center items-end gap-10" style={{ borderColor: '#94a3b8' }}>
                       <span className="text-2xl font-bold tracking-widest w-1/2 text-right" style={{ color: '#334155' }}>座號：{studentId}</span>
                       <span className="text-4xl font-black w-1/2 text-left" style={{ color: '#1e293b' }}>{studentName} </span>
                     </div>
-                    <p className="text-[17px] leading-[1.8] font-sans mt-2 px-10 text-justify" style={{ color: '#334155' }}>
+                    <p className="text-[17px] leading-[1.8] font-sans px-10 text-justify" style={{ color: '#334155' }}>
                       恭喜同學！您在「顯微測微器校正練習系統」中，展現出卓越的顯微鏡操作技巧與精確的數值計算能力，連續正確完成五次測微器刻度數值校正，特發此證，以茲鼓勵。
                     </p>
                   </div>
 
-                  <div className="w-full flex justify-between px-24 mt-4 items-center">
-                    <div className="text-center font-sans mt-3">
+                  <div className="w-full flex justify-between px-24 items-center">
+                    <div className="text-center font-sans mt-0">
                       <div className="w-32 border-b mb-2" style={{ borderColor: '#94a3b8' }}></div>
                       <p className="text-[11px] uppercase tracking-widest" style={{ color: '#64748b' }}>Date</p>
                       <p className="font-bold mt-1 text-[15px]" style={{ color: '#334155' }}>{new Date().toLocaleDateString('zh-TW')}</p>
                     </div>
                     
-                    <div className="relative flex items-center justify-center w-32 h-32 -mt-4">
-                       <div className="w-[110px] h-[110px] rounded-full border-4 flex items-center justify-center rotate-12 -translate-y-2" style={{ backgroundColor: '#fde68a', borderColor: '#fbbf24' }}>
-                         <div className="w-20 h-20 border-2 border-dashed rounded-full flex flex-col items-center justify-center" style={{ borderColor: '#f59e0b', backgroundColor: 'rgba(255,255,255,0.6)' }}>
-                            <Star className="w-7 h-7 mb-1" style={{ color: '#f59e0b', fill: '#f59e0b' }}/>
-                            <span className="text-[10px] font-black uppercase tracking-tighter" style={{ color: '#b45309' }}>Certified</span>
+                    <div className="relative flex items-center justify-center w-28 h-28 -mt-2">
+                       <div className="w-[100px] h-[100px] rounded-full border-4 flex items-center justify-center rotate-12 -translate-y-1" style={{ backgroundColor: '#fde68a', borderColor: '#fbbf24' }}>
+                         <div className="w-16 h-16 border-2 border-dashed rounded-full flex flex-col items-center justify-center" style={{ borderColor: '#f59e0b', backgroundColor: 'rgba(255,255,255,0.6)' }}>
+                            <Star className="w-6 h-6 mb-0.5" style={{ color: '#f59e0b', fill: '#f59e0b' }}/>
+                            <span className="text-[9px] font-black uppercase tracking-tighter" style={{ color: '#b45309' }}>Certified</span>
                          </div>
                        </div>
                     </div>
 
-                    <div className="text-center font-sans mt-3">
+                    <div className="text-center font-sans mt-0">
                        <div className="text-2xl font-black italic mb-1 font-serif tracking-widest" style={{ color: '#1e293b' }}>Avatar Biology</div>
                        <p className="text-xs font-bold tracking-widest" style={{ color: '#64748b' }}>VIRTUAL LAB SYSTEM</p>
                     </div>
