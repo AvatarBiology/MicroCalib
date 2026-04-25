@@ -1,6 +1,6 @@
 # 顯微測微器校正練習系統 (Microscope Micrometer Calibration Practice)
 
-![Avatar Biology](https://img.shields.io/badge/Designed_by-Avatar_Biology_(2026)-fbbf24?style=flat-square) 
+![Avatar Biology](https://img.shields.io/badge/Designed_by-Avatar_Biology-fbbf24?style=flat-square) 
 ![React](https://img.shields.io/badge/React-18-blue?style=flat-square&logo=react)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=flat-square&logo=tailwind-css)
 
